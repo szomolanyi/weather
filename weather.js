@@ -150,8 +150,20 @@ function pos_callback(pos) {
     if (pos.hasOwnProperty("err")) {
         $("div#position_error").html(pos.err);
     }
-    //$("#l_city").html(mock.name);
-    var r=mock;
+    $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+pos.lat+"&lon="+pos.lon+"&APPID=08c264711f9ddd89e8aadccc26c148db", function(r){
+        fill_element("#l_city", r.name);
+        fill_element("#l_description",r.weather[0].main);
+        init_temperature(r.main.temp);
+        $("#l_icon").attr("class", "wi "+icons_map[r.weather[0].icon]);
+        fill_element("#l_clouds",r.clouds.all);
+        fill_element("#l_pressure",Math.round(r.main.pressure));
+        fill_element("#l_humidity",Math.round(r.main.humidity));
+        fill_element("#l_wind_speed",Math.round(r.wind.speed));
+        fill_element("#l_wind_direction",Math.round(r.wind.deg));
+        fill_element("#l_sunrise",format_time(r.sys.sunrise));
+        fill_element("#l_sunset",format_time(r.sys.sunset));
+    })
+    /*var r=mock;
     fill_element("#l_city", r.name);
     fill_element("#l_description",r.weather[0].main);
     init_temperature(r.main.temp);
@@ -163,6 +175,7 @@ function pos_callback(pos) {
     fill_element("#l_wind_direction",Math.round(r.wind.deg));
     fill_element("#l_sunrise",format_time(r.sys.sunrise));
     fill_element("#l_sunset",format_time(r.sys.sunset));
+    */
 }
 
 $(document).ready(function() {
