@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Local weather page">
+    <meta name="author" content="Robert Szomolanyi">
+
+    <title>Local weather</title>
+    <link rel="stylesheet" type="text/css" href="weather.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="weather.js"></script>
+</head>
+<body>
+    <div id="center">
+        <div id="container">
+            <div class="main">
+                <i id="l_icon"></i>
+                &nbsp;
+                <span id="l_temp_value" class="important"></span>
+                <a href="javascript:fill_temperature()"><sup id="l_temp_unit"></sup></a>
+            </div>
+            <div id="l_city" class="col"></div>
+            <div id="l_description"></div>
+            <hr>
+            <div class="additional">
+                <div>
+                    <span>Cloud coverage:&nbsp;</span>
+                    <span id="l_clouds"></span>
+                </div>
+                <div>
+                    <span>Pressure:&nbsp;</span>
+                    <span id="l_pressure">&nbsp;hPa</span>
+                </div>
+                <div>
+                    <span>Humidity:&nbsp;</span>
+                    <span id="l_humidity">&nbsp;%</span>
+                </div>
+                <div>
+                    <span>Wind speed:&nbsp;</span>
+                    <span id="l_wind_speed">&nbsp;m/s</span>
+                </div>
+                <div>
+                    <span>Wind direction:&nbsp;</span>
+                    <span id="l_wind_direction">&nbsp;&deg;</span>
+                </div>
+                <div>
+                    <span>Sunrise:&nbsp;</span>
+                    <span id="l_sunrise">&nbsp;</span>
+                </div>
+                <div>
+                    <span>Sunset:&nbsp;</span>
+                    <span id="l_sunset">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="position_trace"></div>
+    <div id="position_error"></div>
+</body>
+</html>

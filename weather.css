@@ -1,0 +1,73 @@
+div#position_trace {
+    position: fixed;
+    bottom: 0px;
+    font-size: 0.7em;
+}
+div#position_error {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    font-size: 0.7em;
+}
+div#container {
+  overflow: auto;
+  width: 90vw;
+}
+div.main {
+  float: right;
+}
+div.additional div span:nth-of-type(1) {
+  float: left;
+}
+div.additional div span:nth-of-type(2) {
+  float: right;
+}
+div.additional div {
+  clear: both;
+}
+body {
+        font-family: 'Raleway', sans-serif;
+        background-color: black;
+        color: white;
+        font-size: 4.8vw;
+}
+@media screen and (min-width: 640px) {
+  body {
+    font-size: 32px;
+  }
+  div#container {
+    width: 640px;
+  }
+}
+.important {
+  font-size: 1.7em;
+}
+div#center {
+ /* can also be whatever container */
+  min-height:90vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+div#l_clouds {
+  clear: both;
+}
+sup#l_temp_unit {
+  vertical-align: super;
+  font-size: smaller;
+}
+a {
+   outline: 0;
+   text-decoration: none;
+}
+a:link {
+  color: #909090;
+}
+
+a:hover, a:active, a:focus{
+  color: white;
+}
+
