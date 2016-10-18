@@ -163,7 +163,8 @@ function pos_callback(pos) {
         fill_element("#l_sunrise",format_time(r.sys.sunrise));
         fill_element("#l_sunset",format_time(r.sys.sunset));
     })
-    /*var r=mock;
+    /*
+    var r=mock;
     fill_element("#l_city", r.name);
     fill_element("#l_description",r.weather[0].main);
     init_temperature(r.main.temp);
