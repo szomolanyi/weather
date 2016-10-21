@@ -25,6 +25,9 @@ div.additional div span:nth-of-type(2) {
 div.additional div {
   clear: both;
 }
+div.api-switcher {
+  font-size: 0.7em;
+}
 body {
         font-family: 'Raleway', sans-serif;
         background-color: black;

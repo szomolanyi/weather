@@ -13,12 +13,15 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="icons_map.js"></script>
+    <script src="w_api.js"></script>
     <script src="weather.js"></script>
 </head>
 <body>
     <div id="center">
         <div id="container">
             <div class="main">
+                &nbsp;
                 <i id="l_icon"></i>
                 &nbsp;
                 <span id="l_temp_value" class="important"></span>
@@ -30,31 +33,61 @@
             <div class="additional">
                 <div>
                     <span>Cloud coverage:&nbsp;</span>
-                    <span id="l_clouds">&nbsp;%</span>
+                    <span>
+                        <span id="l_clouds"></span>
+                        &nbsp;%
+                    </span>
                 </div>
                 <div>
                     <span>Pressure:&nbsp;</span>
-                    <span id="l_pressure">&nbsp;hPa</span>
+                    <span>
+                        <span id="l_pressure"></span>
+                        &nbsp;hPa
+                    </span>
                 </div>
                 <div>
                     <span>Humidity:&nbsp;</span>
-                    <span id="l_humidity">&nbsp;%</span>
+                    <span>
+                        <span id="l_humidity"></span>
+                        &nbsp;%
+                    </span>
                 </div>
                 <div>
                     <span>Wind speed:&nbsp;</span>
-                    <span id="l_wind_speed">&nbsp;m/s</span>
+                    <span>
+                        <span id="l_wind_speed"></span>
+                        &nbsp;m/s
+                    </span>
                 </div>
                 <div>
                     <span>Wind direction:&nbsp;</span>
-                    <span id="l_wind_direction">&nbsp;&deg;</span>
+                    <span>
+                        <span id="l_wind_direction"></span>
+                        &nbsp;&deg;
+                    </span>
                 </div>
                 <div>
                     <span>Sunrise:&nbsp;</span>
-                    <span id="l_sunrise">&nbsp;</span>
+                    <span>
+                        <span id="l_sunrise"></span>
+                        &nbsp;
+                    </span>
                 </div>
                 <div>
                     <span>Sunset:&nbsp;</span>
-                    <span id="l_sunset">&nbsp;</span>
+                    <span>
+                        <span id="l_sunset"></span>
+                        &nbsp;
+                    </span>
+                </div>
+                <div></div>
+                <hr>
+                <div class="api-switcher">
+                    <span>Used API:&nbsp;</span>
+                    <span>
+                        <a id="a-ow-api" href="javascript:fill_data(false,'ow');">Open Weather Map</a>
+                        <a id="a-wu-api" href="javascript:fill_data(false,'wu');">Weather Underground</a>
+                    </span>
                 </div>
             </div>
         </div>
