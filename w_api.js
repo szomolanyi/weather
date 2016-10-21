@@ -236,7 +236,7 @@ var w_api = {
     if (this.resp[dst_api] === undefined) {
       return this.getPos().then(function(pos) {
         if (dst_api === "wu") {
-          return $.getJSON("http://api.wunderground.com/api/0673ed02d8436590/conditions/astronomy/q/"+pos.lat+","+pos.lon+".json")
+          return $.getJSON("https://api.wunderground.com/api/0673ed02d8436590/conditions/astronomy/q/"+pos.lat+","+pos.lon+".json")
             .then(function(r) {
               return w_api.makeWUResp(r);
             });
