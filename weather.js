@@ -257,7 +257,7 @@ $(document).ready(function() {
     fill_data("wu");
 });
 
-function fill_data(dst_api="wu", flag_mock="false") {
+function fill_data(dst_api="wu", flag_mock=false) {
     w_api.getData(flag_mock, dst_api)
         .done(function(r) {
             fill_element("#l_city", r.city);
