@@ -7,8 +7,8 @@ var wu_icons_map={
     "clear": "wi-day-sunny",
     "cloudy": "wi-cloudy",
     "flurries": "wi-snow",
-    "fog": "day-haze",
-    "hazy": "day-haze",
+    "fog": "wi-day-haze",
+    "hazy": "wi-day-haze",
     "mostlycloudy": "wi-cloud",
     "mostlysunny": "wi-day-cloudy",
     "partlycloudy": "wi-cloud",
@@ -68,6 +68,6 @@ var ow_icons_map={
     "13d": "wi-snow",
     "13n": "wi-snow",
     //mist
-    "50d": "day-haze",
+    "50d": "wi-day-haze",
     "50n": "wi-cloudy"
 };

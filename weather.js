@@ -254,8 +254,17 @@ function pos_callback(pos) {
 
 $(document).ready(function() {
     //var pos=get_pos(pos_callback);
+    $("#err_close").click( function() {
+        $("div#position_error").css("display", "none");
+    });
+
     fill_data("wu");
+
 });
+
+function close_window() {
+    $("div#position_error").css("display", "none");
+}
 
 function fill_data(dst_api="wu", flag_mock=false) {
     w_api.getData(flag_mock, dst_api)
@@ -288,9 +297,10 @@ function fill_data(dst_api="wu", flag_mock=false) {
                 error += "Weather underground ";
             else
                 error += "Open Weather Map ";
-            error+="API</p>";
-            error+="<p>"+textStatus+errorThrown+"</p>";
-            //$("div#position_error").html(error).css("display":"block");
-            console.log(textStatus+errorThrown);
+            error+="API.</p>";
+            error+="<p>Error: "+textStatus+"&nbsp;"+errorThrown+"</p>";
+            $("div#error_msg").html(error);
+            $("div#position_error").css("display", "block");
+            console.log(textStatus+"&nbsp;"+errorThrown);
         });
 }

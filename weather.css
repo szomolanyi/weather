@@ -11,6 +11,13 @@ div#position_error {
     width: 80%; 
     display: none;
     font-size: 0.7em;
+    background-color: red;
+    font-color: white;
+    border-width: 5px;
+    border-style: solid;
+    border-color : yellow;
+    margin: 5px;
+    padding : 10px;
 }
 div#container {
   overflow: auto;
@@ -35,7 +42,7 @@ body {
         font-family: 'Raleway', sans-serif;
         background-color: black;
         color: white;
-        font-size: 4.4vw;
+        font-size: 4.0vw;
 }
 @media screen and (min-width: 640px) and (min-height: 400px) {
   body {
