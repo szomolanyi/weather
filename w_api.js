@@ -242,7 +242,7 @@ var w_api = {
             });
         }
         else if (dst_api === "ow") {
-          return $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+pos.lat+"&lon="+pos.lon+"&APPID=f08c264711f9ddd89e8aadccc26c148db")
+          return $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+pos.lat+"&lon="+pos.lon+"&APPID=08c264711f9ddd89e8aadccc26c148db")
             .then(function(r) {
               return w_api.makeOWResp(r);
             });
