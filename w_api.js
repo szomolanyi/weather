@@ -157,7 +157,7 @@ var w_api = {
     return ("00"+d.getHours()).slice(-2)+":"+("00"+d.getMinutes()).slice(-2);
   },
 
-  makeResp: function(r, dst_api="wu") {
+  makeResp: function(r, dst_api) {
     if (dst_api === "wu") {
       this.resp.wu = {
         "city" : r.current_observation.observation_location.city,
