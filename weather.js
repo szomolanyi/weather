@@ -254,10 +254,10 @@ function pos_callback(pos) {
 
 $(document).ready(function() {
     //var pos=get_pos(pos_callback);
-    fill_data(false, "wu");
+    fill_data("wu");
 });
 
-function fill_data(flag_mock="false", dst_api="wu") {
+function fill_data(dst_api="wu", flag_mock="false") {
     w_api.getData(flag_mock, dst_api)
         .done(function(r) {
             fill_element("#l_city", r.city);
@@ -283,6 +283,14 @@ function fill_data(flag_mock="false", dst_api="wu") {
             
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
+            var error = "<p>Error retrieving data from ";
+            if (dst_api === "wu") 
+                error += "Weather underground ";
+            else
+                error += "Open Weather Map ";
+            error+="API</p>";
+            error+="<p>"+textStatus+errorThrown+"</p>";
+            //$("div#position_error").html(error).css("display":"block");
             console.log(textStatus+errorThrown);
         });
 }

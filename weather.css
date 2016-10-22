@@ -4,9 +4,12 @@ div#position_trace {
     font-size: 0.7em;
 }
 div#position_error {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
+    position: fixed; 
+    left: 10%; 
+    top: 10%; 
+    z-index: 100; 
+    width: 80%; 
+    display: none;
     font-size: 0.7em;
 }
 div#container {
