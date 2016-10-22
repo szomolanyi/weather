@@ -229,7 +229,7 @@ var w_api = {
     return deffered.promise();
   },
 
-  getData: function(flag_mock=false, dst_api="wu") {
+  getData: function(flag_mock, dst_api) {
     if (flag_mock) {
       this.makeResp(mock[dst_api], dst_api);
     }

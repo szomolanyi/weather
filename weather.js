@@ -258,7 +258,7 @@ $(document).ready(function() {
         $("div#position_error").css("display", "none");
     });
 
-    fill_data("wu");
+    fill_data("wu", false);
 
 });
 
@@ -266,7 +266,7 @@ function close_window() {
     $("div#position_error").css("display", "none");
 }
 
-function fill_data(dst_api="wu", flag_mock=false) {
+function fill_data(dst_api, flag_mock) {
     w_api.getData(flag_mock, dst_api)
         .done(function(r) {
             fill_element("#l_city", r.city);
