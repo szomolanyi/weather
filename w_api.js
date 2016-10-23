@@ -57,7 +57,7 @@ var w_api = {
   },
 
   getPos: function() {
-    var deffered=$.Deferred();
+    var deferred=$.Deferred();
     var geo=navigator.geolocation;
     var pos={
         "lon":17.11,
@@ -68,18 +68,16 @@ var w_api = {
             pos.lon=Math.round(position.coords.longitude*1000)/1000;
             pos.lat=Math.round(position.coords.latitude*1000)/1000;
             pos.err="";
-            deffered.resolve(pos);
+            deferred.resolve(pos);
             
         }, function(error) {
-            pos.err=error.code+" "+error.message;
-            deffered.resolve(pos);
+            deferred.reject(undefined, "Position unresolved", error);
       });
     }
     else {
-        pos.err="Location not supported";
-        deffered.resolve(pos); /* using default */
+        deferred.reject(undefined, "Position unresolved", "Location not supported");
     }
-    return deffered.promise();
+    return deferred.promise();
   },
 
   getData: function(flag_mock, dst_api) {
