@@ -71,7 +71,7 @@ var w_api = {
             deferred.resolve(pos);
             
         }, function(error) {
-            deferred.reject(undefined, "Position unresolved", error);
+            deferred.reject(undefined, "Position unresolved", error.code + ":" + error.message);
       });
     }
     else {
