@@ -41,24 +41,9 @@ function fill_temperature() {
     }
 }
 
-function pos_callback(pos) {
-    $("div#position_trace").html(pos.lon+";"+pos.lat);
-    if (pos.hasOwnProperty("err")) {
-        $("div#position_error").html(pos.err);
-    }
-    w_api.getData(true, "ow")
-        .done(function(r1) {
-            console.log(r1);
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus+errorThrown);
-        });
-}
-
 $(document).ready(function() {
-    //var pos=get_pos(pos_callback);
     $("#err_close").click( function() {
-        $("div#position_error").css("display", "none");
+        $("div#error_box").css("display", "none");
     });
 
     fill_data("wu", false);
@@ -66,7 +51,7 @@ $(document).ready(function() {
 });
 
 function close_window() {
-    $("div#position_error").css("display", "none");
+    $("div#error_box").css("display", "none");
 }
 
 function fill_data(dst_api, flag_mock) {
@@ -101,7 +86,7 @@ function fill_data(dst_api, flag_mock) {
             error+="API.</p>";
             error+="<p>Error: "+textStatus+"&nbsp;"+errorThrown+"</p>";
             $("div#error_msg").html(error);
-            $("div#position_error").css("display", "block");
+            $("div#error_box").css("display", "block");
             console.log(textStatus+"&nbsp;"+errorThrown);
         });
 }

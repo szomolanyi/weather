@@ -1,9 +1,4 @@
-div#position_trace {
-    position: fixed;
-    bottom: 0px;
-    font-size: 0.7em;
-}
-div#position_error {
+div#error_box {
     position: fixed; 
     left: 10%; 
     top: 10%; 
@@ -16,7 +11,6 @@ div#position_error {
     border-width: 5px;
     border-style: solid;
     border-color : yellow;
-    margin: 5px;
     padding : 10px;
 }
 div#container {

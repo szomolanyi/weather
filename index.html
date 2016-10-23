@@ -19,11 +19,12 @@
     <script src="weather.js"></script>
 </head>
 <body>
+    <div id="error_box">
+        <div id="error_msg"></div>
+        <button id="err_close" onclick="javascript:close_window();">Close</button>
+    </div>
+
     <div id="center">
-        <div id="position_error">
-            <div id="error_msg"></div>
-            <button id="err_close" onclick="javascript:close_window();">Close</button>
-        </div>
         <div id="container">
             <div class="main">
                 &nbsp;
