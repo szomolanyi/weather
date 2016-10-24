@@ -26,71 +26,72 @@
 
     <div id="center">
         <div id="container">
-            <div class="main">
-                &nbsp;
-                <i id="l_icon"></i>
-                &nbsp;
-                <span id="l_temp_value" class="important"></span>
-                <a href="javascript:fill_temperature()"><sup id="l_temp_unit"></sup></a>
+            <div>
+                <span>
+                    <div id="l_city" class="col"></div>
+                    <div id="l_description"></div>
+                </span>
+                <span>
+                    &nbsp;
+                    <i id="l_icon"></i>
+                    &nbsp;
+                    <span id="l_temp_value" class="important"></span>
+                    <a href="javascript:fill_temperature()"><sup id="l_temp_unit"></sup></a>
+                </span>
             </div>
-            <div id="l_city" class="col"></div>
-            <div id="l_description"></div>
             <hr>
-            <div class="additional">
-                <div>
-                    <span>Pressure:&nbsp;</span>
-                    <span>
-                        <span id="l_pressure"></span>
-                        &nbsp;hPa
-                    </span>
-                </div>
-                <div>
-                    <span>Humidity:&nbsp;</span>
-                    <span>
-                        <span id="l_humidity"></span>
-                        &nbsp;%
-                    </span>
-                </div>
-                <div>
-                    <span>Wind speed:&nbsp;</span>
-                    <span>
-                        <span id="l_wind_speed"></span>
-                        &nbsp;m/s
-                    </span>
-                </div>
-                <div>
-                    <span>Wind direction:&nbsp;</span>
-                    <span>
-                        <span id="l_wind_direction"></span>
-                        &nbsp;&deg;
-                    </span>
-                </div>
-                <div>
-                    <span>Sunrise:&nbsp;</span>
-                    <span>
-                        <span id="l_sunrise"></span>
-                        &nbsp;
-                    </span>
-                </div>
-                <div>
-                    <span>Sunset:&nbsp;</span>
-                    <span>
-                        <span id="l_sunset"></span>
-                        &nbsp;
-                    </span>
-                </div>
-                <div></div>
-                <hr>
-                <div class="api-switcher">
-                    <span>Used API:&nbsp;</span>
-                    <span>
-                        <a id="a-ow-api" href="javascript:fill_data('ow');">Open Weather Map</a>
-                        <a id="a-wu-api" href="javascript:fill_data('wu');">Weather Underground</a>
-                    </span>
-                </div>
+            <div>
+                <span>Pressure:&nbsp;</span>
+                <span>
+                    <span id="l_pressure"></span>
+                    &nbsp;hPa
+                </span>
+            </div>
+            <div>
+                <span>Humidity:&nbsp;</span>
+                <span>
+                    <span id="l_humidity"></span>
+                    &nbsp;%
+                </span>
+            </div>
+            <div>
+                <span>Wind speed:&nbsp;</span>
+                <span>
+                    <span id="l_wind_speed"></span>
+                    &nbsp;m/s
+                </span>
+            </div>
+            <div>
+                <span>Wind direction:&nbsp;</span>
+                <span>
+                    <span id="l_wind_direction"></span>
+                    &nbsp;&deg;
+                </span>
+            </div>
+            <div>
+                <span>Sunrise:&nbsp;</span>
+                <span>
+                    <span id="l_sunrise"></span>
+                    &nbsp;
+                </span>
+            </div>
+            <div>
+                <span>Sunset:&nbsp;</span>
+                <span>
+                    <span id="l_sunset"></span>
+                    &nbsp;
+                </span>
+            </div>
+            <div></div>
+            <hr>
+            <div class="api-switcher">
+                <span>Used API:&nbsp;</span>
+                <span>
+                    <a id="a-ow-api" href="javascript:fill_data('ow');">Open Weather Map</a>
+                    <a id="a-wu-api" href="javascript:fill_data('wu');">Weather Underground</a>
+                </span>
             </div>
         </div>
     </div>
-    <div id="position_trace"></div>
 </body>
 </html>

@@ -57,7 +57,7 @@ function close_window() {
 function fill_data(dst_api, flag_mock) {
     w_api.getData(flag_mock, dst_api)
         .done(function(r) {
-            fill_element("#l_city", r.city);
+            fill_element("#l_city", r.city + ", " + r.time);
             fill_element("#l_description",r.description);
             init_temperature(r.temp_c+273.15);
             $("#l_icon").attr("class", "important wi "+r.icon);
@@ -78,15 +78,23 @@ function fill_data(dst_api, flag_mock) {
             
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
-            var error = "<p>Error retrieving data from ";
-            if (dst_api === "wu") 
-                error += "Weather underground ";
-            else
-                error += "Open Weather Map ";
-            error+="API.</p>";
-            error+="<p>Error: "+textStatus+"&nbsp;"+errorThrown+"</p>";
+            console.log(textStatus+"&nbsp;"+errorThrown);
+            var error="";
+            if (textStatus === "Position unresolved") {
+                error+="<p>Unable to resolve position. Please check, if location tracking is enabled in Your browser.</p>";
+                error+="<p>Error: " + errorThrown+ "</p>";
+            }
+            else {
+                error += "<p>Error retrieving data from ";
+                if (dst_api === "wu") 
+                    error += "Weather underground API.</p>";
+                else {
+                    error += "Open Weather Map API.</p>";
+                    error += "<p>Open Weather API is currently used over http. Cross-domain http requests are denied in most browsers, if page is served over https. Currently (10.2016), it is possible to disable this error in Chrome browser.</p>"
+                }
+                error+="<p>Error: "+textStatus+"&nbsp;"+errorThrown+"</p>";
+            }
             $("div#error_msg").html(error);
             $("div#error_box").css("display", "block");
-            console.log(textStatus+"&nbsp;"+errorThrown);
         });
 }

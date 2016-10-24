@@ -5,9 +5,17 @@ var w_api = {
     "ow": undefined
   },
 
+  lpad: function(s) {
+    return ("00"+s).slice(-2);
+  },
+
+  format_time: function(d) {
+    return this.lpad(d.getHours())+":"+("00"+d.getMinutes()).slice(-2);
+  },
+
   format_epoch_time: function(epoch) {
     var d=new Date(epoch*1000);
-    return ("00"+d.getHours()).slice(-2)+":"+("00"+d.getMinutes()).slice(-2);
+    this.format_time(d);
   },
 
   makeResp: function(r, dst_api) {
@@ -21,9 +29,10 @@ var w_api = {
         "humidity": r.current_observation.relative_humidity.replace(/%| /, ''),
         "wind_speed": r.current_observation.wind_kph/3.6,
         "wind_direction": r.current_observation.wind_degrees,
-        "sunrise": r.sun_phase.sunrise.hour+":"+r.sun_phase.sunrise.minute,
-        "sunset": r.sun_phase.sunset.hour+":"+r.sun_phase.sunset.minute,
-        "icon" : wu_icons_map[r.current_observation.icon]
+        "sunrise": this.lpad(r.sun_phase.sunrise.hour)+":"+r.sun_phase.sunrise.minute,
+        "sunset": this.lpad(r.sun_phase.sunset.hour)+":"+r.sun_phase.sunset.minute,
+        "icon" : wu_icons_map[r.current_observation.icon],
+        "time" : this.format_time(new Date())
       };
     }
     else if (dst_api === "ow") {
@@ -38,7 +47,8 @@ var w_api = {
         "wind_direction": r.wind.deg,
         "sunrise": this.format_epoch_time(r.sys.sunrise),
         "sunset": this.format_epoch_time(r.sys.sunset),
-        "icon": ow_icons_map[r.weather[0].icon]
+        "icon": ow_icons_map[r.weather[0].icon],
+        "time" : this.format_time(new Date())
       };
     }
     else {
