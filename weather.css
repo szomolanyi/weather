@@ -25,6 +25,7 @@ div#container {
 
 div#container div > span:nth-of-type(1) {
   float: left;
+  width: 60%
 }
 div#container div > span:nth-of-type(2) {
   float: right;
@@ -40,7 +41,7 @@ body {
         font-family: 'Raleway', sans-serif;
         background-color: black;
         color: white;
-        font-size: 4.0vw;
+        font-size: 4.4vw;
 }
 @media screen and (min-width: 640px) and (min-height: 400px) {
   body {
