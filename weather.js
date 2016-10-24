@@ -51,7 +51,7 @@ $(document).ready(function() {
 });
 
 function close_window() {
-    $("div#error_box").css("display", "none");
+    $("div#error_box").hide(500);
 }
 
 function fill_data(dst_api, flag_mock) {
@@ -95,6 +95,6 @@ function fill_data(dst_api, flag_mock) {
                 error+="<p>Error: "+textStatus+"&nbsp;"+errorThrown+"</p>";
             }
             $("div#error_msg").html(error);
-            $("div#error_box").css("display", "block");
+            $("div#error_box").show(500);
         });
 }

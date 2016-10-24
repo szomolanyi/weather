@@ -10,13 +10,20 @@ div#error_box {
     z-index: 100; 
     width: 60%; 
     display: none;
-    font-size: 0.7em;
+    font-size: 0.8em;
     background-color: red;
     color: black;
     border-width: 5px;
     border-style: solid;
     border-color : yellow;
     padding : 10px;
+}
+button {
+  background-color: yellow;
+  height: 2em;
+  font-weight: bold;
+  border-radius: 20%;
+  border: 2px solid #555555;
 }
 div#container {
   overflow: auto;
