@@ -21,7 +21,7 @@ var w_api = {
   makeResp: function(r, dst_api) {
     if (dst_api === "wu") {
       this.resp.wu = {
-        "city" : r.current_observation.observation_location.city,
+        "city" : r.current_observation.display_location.city,
         "description": r.current_observation.weather,
         "temp_c": r.current_observation.temp_c,
         "temp_f": r.current_observation.temp_f,
