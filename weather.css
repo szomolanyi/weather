@@ -48,7 +48,7 @@ body {
         font-family: 'Raleway', sans-serif;
         background-color: black;
         color: white;
-        font-size: 4.4vw;
+        font-size: 5.4vw;
 }
 @media screen and (min-width: 640px) and (min-height: 400px) {
   body {
@@ -59,7 +59,7 @@ body {
   }
 }
 .important {
-  font-size: 1.7em;
+  font-size: 1.4em;
 }
 div#center {
  /* can also be whatever container */
