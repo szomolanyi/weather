@@ -9,7 +9,12 @@
     <meta name="author" content="Robert Szomolanyi">
 
     <title>Local weather</title>
+    
+    <link rel="stylesheet" type="text/css" href="alter.css">
+    
+    <!--
     <link rel="stylesheet" type="text/css" href="weather.css">
+    -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -20,8 +25,10 @@
 </head>
 <body>
     <div id="error_box">
+        <div id="error_header"></div>
+        <hr>
         <div id="error_msg"></div>
-        <button id="err_close" onclick="javascript:close_window();">Close</button>
+        <button id="err_close" onclick="javascript:close_window();">&times;</button>
     </div>
 
     <div id="center">
@@ -35,7 +42,7 @@
                     <span><i id="l_icon"></i></span>
                     &nbsp;
                     <span id="l_temp_value" class="important"></span>
-                    <span><a href="javascript:fill_temperature()"><sup id="l_temp_unit"></sup></a></span>
+                    <span><a class="inactive" href="javascript:fill_temperature()"><sup id="l_temp_unit"></sup></a></span>
                 </span>
             </div>
             <hr>
@@ -84,11 +91,9 @@
             <div></div>
             <hr>
             <div class="api-switcher">
-                <span style="width:20%">Used API:&nbsp;</span>
-                <span>
-                    <a id="a-ow-api" href="javascript:fill_data('ow');">Open Weather Map</a>
-                    <a id="a-wu-api" href="javascript:fill_data('wu');">Weather Underground</a>
-                </span>
+                <div>Used API:&nbsp;</div>
+                <div><a id="a-ow-api" href="javascript:fill_data('ow');">Open Weather Map</a></div>
+                <div><a id="a-wu-api" href="javascript:fill_data('wu');">Weather Underground</a></div>
             </div>
         </div>
     </div>

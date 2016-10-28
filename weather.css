@@ -4,19 +4,20 @@
 */
 
 div#error_box {
-    position: fixed; 
-    top: 10%; 
-    left: 20%;
-    z-index: 100; 
-    width: 60%; 
-    display: none;
-    font-size: 0.8em;
-    background-color: red;
-    color: black;
-    border-width: 5px;
-    border-style: solid;
-    border-color : yellow;
-    padding : 10px;
+  position: fixed; 
+  top: 10%; 
+  left: 10%;
+  z-index: 100; 
+  width: 60%; 
+  display: none;
+  font-size: 0.8em;
+  background-color: red;
+  color: black;
+  border-width: 5px;
+  border-style: solid;
+  border-color : yellow;
+  padding : 10%;
+  box-shadow: 6px 6px 8px grey;
 }
 button {
   background-color: yellow;
@@ -42,7 +43,7 @@ div#container div,hr {
 }
 
 div.api-switcher {
-  font-size: 0.7em;
+  font-size: 0.6em;
 }
 body {
         font-family: 'Raleway', sans-serif;

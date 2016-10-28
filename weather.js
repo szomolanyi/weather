@@ -68,12 +68,18 @@ function fill_data(dst_api, flag_mock) {
             fill_element("#l_sunrise",r.sunrise);
             fill_element("#l_sunset",r. sunset);
             if (dst_api === "wu") {
-                $("a#a-wu-api").css("font-size", "1em");
-                $("a#a-ow-api").css("font-size", "0.8em");
+                /*$("a#a-wu-api").css("font-size", "1em");
+                $("a#a-ow-api").css("font-size", "0.8em");*/
+                $("a#a-wu-api").attr("class", "active");
+                $("a#a-ow-api").attr("class", "inactive");
             }
             else {
+                $("a#a-ow-api").attr("class", "active");
+                $("a#a-wu-api").attr("class", "inactive");
+                /*
                 $("a#a-ow-api").css("font-size", "1em");
                 $("a#a-wu-api").css("font-size", "0.8em");
+                */
             }
             
         })
@@ -83,6 +89,7 @@ function fill_data(dst_api, flag_mock) {
             if (textStatus === "Position unresolved") {
                 error+="<p>Unable to resolve position. Please check, if location tracking is enabled in Your browser.</p>";
                 error+="<p>Error: " + errorThrown+ "</p>";
+                $("div#error_header").html("Error resolving position");
             }
             else {
                 error += "<p>Error retrieving data from ";
@@ -93,6 +100,7 @@ function fill_data(dst_api, flag_mock) {
                     error += "<p>Open Weather API is currently used over http. Cross-domain http requests are denied in most browsers, if page is served over https. Currently (10.2016), it is possible to disable this error in Chrome browser.</p>"
                 }
                 error+="<p>Error: "+textStatus+"&nbsp;"+errorThrown+"</p>";
+                $("div#error_header").html("Error getting data from weather API");
             }
             $("div#error_msg").html(error);
             $("div#error_box").show(500);

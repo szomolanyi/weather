@@ -1,0 +1,147 @@
+/*
+    left: 10%; 
+
+*/
+div#error_box {
+  position: fixed; 
+  top: 10%; 
+  left: 10%;
+  z-index: 100; 
+  width: 60%;
+  display: none;
+  font-size: 0.8em;
+  background-color: #424242;
+  color: white;
+  padding : 5% 10%;
+  box-shadow: 6px 6px 8px #212121;
+}
+button {
+  display: block;
+  background-color: #ffd740;
+  height: 2em;
+  width: 2em;
+  border: none;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 1em;
+  padding :0px;
+  transition-duration: 0.4s;
+  float: right;
+}
+button:hover {
+  background-color: #ffe57f;
+  box-shadow: 6px 6px 8px rgba(0,0,0,0.5);
+}
+button:focus {
+  background-color: #ffe57f;
+  box-shadow: 6px 6px 8px rgba(0,0,0,0.5);
+  outline-style: none;
+}
+div#container {
+  overflow: auto;
+  width: 90vw;
+}
+
+div#container div > span:nth-of-type(1) {
+  float: left;
+  width: 60%
+}
+div#container div > span:nth-of-type(2) {
+  float: right;
+}
+div#container div,hr {
+  clear: both;
+}
+
+div.api-switcher {
+  font-size: 0.6em;
+}
+div.api-switcher > div {
+  display: inline-block;
+}
+div.api-switcher > div:nth-of-type(1) {
+  display: inline-block; width: 20%;
+}
+div.api-switcher > div:nth-of-type(2) {
+  display: inline-block; width: 38%;
+  text-align: center;
+}
+div.api-switcher > div:nth-of-type(3) {
+  display: inline-block; width: 38%;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a.active {
+  font-size: 1em;
+  opacity: 1;
+}
+a.inactive {
+  font-size: 0.8em;
+  opacity: 0.6;
+  transition-duration: 0.4s
+}
+a.inactive:hover {
+  font-size: 1em;
+  opacity: 1;
+}
+/*
+div.api-switcher > div > a {
+  outline: 0;
+  text-decoration: none;
+  opacity: 0.6;
+  color : white;
+  transition-duration: 0.4s
+}
+div.api-switcher > div > a:hover {
+  opacity : 1;
+  font-size: 1em;
+}*/
+body {
+        font-family: 'Raleway', sans-serif;
+        background-color: black;
+        color: white;
+        font-size: 5.4vw;
+}
+@media screen and (min-width: 640px) and (min-height: 400px) {
+  body {
+    font-size: 30px;
+  }
+  div#container {
+    width: 640px;
+  }
+}
+.important {
+  font-size: 1.4em;
+}
+div#center {
+ /* can also be whatever container */
+  min-height:90vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+sup#l_temp_unit {
+  vertical-align: super;
+  font-size: smaller;
+}
+/*
+a {
+   outline: 0;
+   text-decoration: none;
+}
+a:link {
+  opacity: 0.6;
+  color : white;
+}
+a:hover, a:active, a:focus{
+  opacity: 1;
+  color: white;
+}
+
+*/
